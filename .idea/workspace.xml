@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="daa3f0ef-e634-431c-b7ac-0d5a7e18088b" name="Changes" comment="My first homework is done! =)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="daa3f0ef-e634-431c-b7ac-0d5a7e18088b" name="Changes" comment="My first homework is done! =)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,6 +122,44 @@
                       </list>
                     </value>
                   </entry>
+                  <entry key="date">
+                    <value>
+                      <list>
+                        <option value="1665250356527" />
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="b246a7f8-72dc-4023-b8f5-be92788cf961">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="date">
+                    <value>
+                      <list>
+                        <option value="1665250356527" />
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -134,6 +170,7 @@
     <option name="OPEN_GENERIC_TABS">
       <map>
         <entry key="4038eb76-a44e-4f96-b758-fe512efa1953" value="TOOL_WINDOW" />
+        <entry key="b246a7f8-72dc-4023-b8f5-be92788cf961" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="RECENT_FILTERS">
