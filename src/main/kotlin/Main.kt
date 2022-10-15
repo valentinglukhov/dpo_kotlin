@@ -6,4 +6,5 @@ fun main() {
     println("I'm from Samara city")
     print("I'm 37 age old\n")
     println("I have no programming experience") // using println function
+    println("Русский язык") // testing Russian language
 }
