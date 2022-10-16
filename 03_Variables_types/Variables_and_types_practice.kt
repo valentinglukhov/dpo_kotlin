@@ -29,6 +29,7 @@ fun main () {
         Height: $height
         Weight: $weight
         Is child? - ${height < 150 || weight < 40}
+        
         """
     println(info)
 }
