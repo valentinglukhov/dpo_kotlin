@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="daa3f0ef-e634-431c-b7ac-0d5a7e18088b" name="Changes" comment="My first homework is done! =)" />
+    <list default="true" id="daa3f0ef-e634-431c-b7ac-0d5a7e18088b" name="Changes" comment="My first homework is done! =)">
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/Empty.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_HelloKotlin/Empty/src/main/kotlin/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04_Functions/Main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -24,17 +44,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/glukh/Desktop/Projects/untitled"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="First_homework" />
+      <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04_Functions" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
