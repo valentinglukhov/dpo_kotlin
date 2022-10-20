@@ -1,9 +1,7 @@
-import java.security.KeyStore.TrustedCertificateEntry
-
 fun main() {
     val originalMessage = "F2p)v\"y233{0->c}ttelciFc"
-    var firstHalf = originalMessage.dropLast(originalMessage.count() / 2)
-    var secondHalf = originalMessage.drop(originalMessage.count() / 2)
+    val firstHalf = originalMessage.dropLast(originalMessage.count() / 2)
+    val secondHalf = originalMessage.drop(originalMessage.count() / 2)
 
     println("Original message: $originalMessage\n")
     println("First half of the original message: $firstHalf\n")
