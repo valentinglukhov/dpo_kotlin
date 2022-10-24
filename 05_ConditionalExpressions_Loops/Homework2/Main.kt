@@ -23,6 +23,6 @@ fun fibonacciSequence (n: Int) : Unit {
         val fN: Int = fN1 + fN2
         fN2 = fN1
         fN1 = fN
-        println(fN)
+        if (f == n - 2) println("Fibonacci number: $fN")
     }
 }
