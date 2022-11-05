@@ -1,5 +1,5 @@
 fun main () {
-    val numberOfUsers = 5
+    val numberOfUsers = 3
     var currentUser = 1
     val authorizationData = hashMapOf<String, String>()
     while (currentUser <= numberOfUsers) {
