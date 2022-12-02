@@ -1,6 +1,8 @@
+import kotlin.random.Random
+
 fun main() {
     val natureReserve = NatureReserve()
-    val lifeCycle: IntRange = 1..10
+    val lifeCycle: IntRange = 1..7
 
     repeat(4) {
         natureReserve.animalList.add(natureReserve.bird.makeChild())
@@ -16,10 +18,6 @@ fun main() {
 
     for (day in lifeCycle) {
         println("День №$day заповедника животных.")
-        natureReserve.bird.newBornList.clear()
-        natureReserve.fish.newBornList.clear()
-        natureReserve.dog.newBornList.clear()
-        natureReserve.animalListDied.clear()
         if (natureReserve.animalList.size == 0) {
             println("В заповеднике не осталось животных. Жизненный цикл окончен.")
             break
@@ -30,13 +28,18 @@ fun main() {
             }
         }
         natureReserve.animalList -= natureReserve.animalListDied
-        natureReserve.animalList.forEachIndexed { index, animal -> animal.randomAction()}
-        natureReserve.newBorn += natureReserve.bird.newBornList
-        natureReserve.newBorn += natureReserve.fish.newBornList
-        natureReserve.newBorn += natureReserve.dog.newBornList
-        natureReserve.animalList += natureReserve.newBorn
-        println("Количество животных рождено: ${natureReserve.newBorn.size}")
-        println("Количество животных живых, включая новорожденных: ${natureReserve.animalList.size}")
+        for (index in natureReserve.animalList.indices) {
+            when (Random.nextInt(1, 5)) {
+                1 -> natureReserve.animalList[index].sleep()
+                2 -> natureReserve.animalList[index].eat()
+                3 -> natureReserve.animalList[index].move()
+                4 -> { val newBorn = natureReserve.animalList[index].makeChild()
+                    natureReserve.animalList.add(newBorn)
+                }
+            }
+        }
+
+        println("Количество животных в заповеднике: ${natureReserve.animalList.size}")
         println("Количество животных погибло: ${natureReserve.animalListDied.size}\n")
     }
 }

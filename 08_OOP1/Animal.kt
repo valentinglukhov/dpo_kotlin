@@ -3,9 +3,9 @@ import kotlin.random.Random
 open class Animal(var energy: Int, var weight: Int, val maxAge: Int = 5, val name: String) {
     open var age: Int = 1
     var isTooOld: Boolean = false
-    var newBornList = mutableListOf<Animal>()
-
-
+        get() = age > maxAge
+    var ableToMove: Boolean = true
+        get() = energy > 5 && weight > 1
 
     init {
         energy = getRandomEnergy()
@@ -15,21 +15,7 @@ open class Animal(var energy: Int, var weight: Int, val maxAge: Int = 5, val nam
 
     open fun makeChild(): Animal {
         val newBorn = Animal(getRandomEnergy(), getRandomWeight(), this.maxAge, this.name)
-        newBornList.add(newBorn)
         return newBorn
-    }
-
-    fun randomAction() {
-        if (isTooOld) {
-            println("К сожалению животное состарилось и погибло.")
-        } else {
-            when (Random.nextInt(1, 5)) {
-                1 -> sleep()
-                2 -> eat()
-                3 -> move()
-                4 -> makeChild()
-            }
-        }
     }
 
     open fun sleep() {
@@ -45,19 +31,22 @@ open class Animal(var energy: Int, var weight: Int, val maxAge: Int = 5, val nam
         println("$name ест.")
     }
 
-    open fun move(): Int {
-        var ableToMove = 0
-        if (energy <= 5 || weight <= 1) return ableToMove
-        energy -= 5
-        weight--
-        tryIncrementAge()
-        println("$name передвигается.")
-        ableToMove = 1
-        return ableToMove
+    open fun move() {
+        println(ableToMove)
+        if (ableToMove) {
+            println("Инфо - $name энергия $energy вес $weight")
+            energy -= 5
+            weight--
+            println("$name передвигается.")
+            tryIncrementAge()
+        } else {
+            println("У животного не хватает энергии или веса для передвижения. Энергия - $energy; вес - $weight")
+        }
     }
 
     open fun tryIncrementAge() {
         if (Random.nextBoolean()) age++
+        if (isTooOld) println("К сожалению животное состарилось и погибло.")
     }
 
     fun getRandomEnergy(): Int {
