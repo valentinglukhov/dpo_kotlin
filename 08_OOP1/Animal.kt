@@ -21,6 +21,7 @@ open class Animal(var energy: Int, var weight: Int, val maxAge: Int = 5, val nam
     open fun sleep() {
         energy += 5
         age++
+        if (isTooOld) println("К сожалению животное ${super.hashCode()} состарилось и погибло.")
         println("$name спит.")
     }
 
@@ -31,22 +32,22 @@ open class Animal(var energy: Int, var weight: Int, val maxAge: Int = 5, val nam
         println("$name ест.")
     }
 
-    open fun move() {
-        println(ableToMove)
+    open fun move(): Boolean {
         if (ableToMove) {
-            println("Инфо - $name энергия $energy вес $weight")
             energy -= 5
             weight--
             println("$name передвигается.")
             tryIncrementAge()
+            return true
         } else {
             println("У животного не хватает энергии или веса для передвижения. Энергия - $energy; вес - $weight")
+            return false
         }
     }
 
     open fun tryIncrementAge() {
         if (Random.nextBoolean()) age++
-        if (isTooOld) println("К сожалению животное состарилось и погибло.")
+        if (isTooOld) println("К сожалению животное ${super.hashCode()} состарилось и погибло.")
     }
 
     fun getRandomEnergy(): Int {
