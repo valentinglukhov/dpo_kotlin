@@ -2,7 +2,7 @@ import kotlin.random.Random
 
 open class Animal(var energy: Int, var weight: Int, val maxAge: Int = 5, val name: String) {
     open var age: Int = 1
-    var isTooOld: Boolean = false
+    val isTooOld: Boolean
         get() = age > maxAge
     var ableToMove: Boolean = true
         get() = energy > 5 && weight > 1
