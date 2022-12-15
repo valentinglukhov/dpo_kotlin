@@ -60,7 +60,7 @@ open class CreditCard(
     }
 
     override fun getBalanceInfo() {
-        println("Баланс по карте $bank составляет: $balance")
+        println("Баланс по карте $bank составляет: $balance\n")
     }
 
     override fun getAvailableFunds() {
