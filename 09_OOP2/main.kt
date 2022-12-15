@@ -9,6 +9,7 @@ fun main () {
     sberBank.getAvailableFunds()
     sberBank.getBalanceInfo()
 
+
     vtb.deposit(1000.0)
     vtb.pay(5000.0)
     vtb.pay(1000.0)

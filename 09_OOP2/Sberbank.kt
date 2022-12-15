@@ -1,6 +1,6 @@
-class Sberbank(balance: Double, creditLimit: Double, bank: String)
-    : CreditCard(balance, creditLimit, bank) {
-    val cashback: Double = 0.05
+class Sberbank(balance: Double, creditLimit: Double, bank: String) : CreditCard(balance, creditLimit, bank) {
+    private val cashback: Double = 0.05
+
     init {
         creditBalance = creditLimit
         println("Выпущена карта $bank")

@@ -1,6 +1,10 @@
-open class CreditCard(override var balance: Double, private val creditLimit: Double, open val bank: String) :
+open class CreditCard(
+    override var balance: Double,
+    private val creditLimit: Double,
+    protected val bank: String
+) :
     BankCard() {
-    var creditBalance: Double
+    protected var creditBalance: Double
     private val overdraft: Double
         get() = creditLimit - creditBalance
 
@@ -60,12 +64,14 @@ open class CreditCard(override var balance: Double, private val creditLimit: Dou
     }
 
     override fun getAvailableFunds() {
-        println("""Инфомация о доступных средствах по карте $bank
+        println(
+            """Инфомация о доступных средствах по карте $bank
                 |Кредитный лимит: $creditLimit
                 |Кредитный баланс: $creditBalance
                 |Собственные средства: $balance
                 |
-        """.trimMargin())
+        """.trimMargin()
+        )
     }
 
 }

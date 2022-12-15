@@ -1,4 +1,4 @@
-open class DebitCard(override var balance: Double, open val bank: String) :
+open class DebitCard(override var balance: Double, protected val bank: String) :
     BankCard() {
 
     override fun deposit(cash: Double) {

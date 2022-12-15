@@ -1,5 +1,6 @@
-class Vtb (balance: Double, bank: String) : DebitCard(balance, bank) {
-    val cashback: Double = 0.02
+class Vtb(balance: Double, bank: String) : DebitCard(balance, bank) {
+    private val cashback: Double = 0.02
+
     init {
         println("Выпущена карта $bank")
         println("Собственные средства: $balance\n")
