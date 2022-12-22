@@ -10,9 +10,9 @@ class Sberbank(balance: Double, creditLimit: Double, bank: String) : CreditCard(
     }
 
     override fun pay(cash: Double): Boolean {
-        if (super.pay(cash) == true) {
-            println("На карту $bank дополнительно начислены бонусы за покупку в размере: ${cash * cashback}")
+        if (super.pay(cash)) {
             deposit(cash * cashback)
+            lastTransaction = "На карту $bank дополнительно начислены бонусы за покупку в размере: ${cash * cashback}"
             return true
         }
         return false

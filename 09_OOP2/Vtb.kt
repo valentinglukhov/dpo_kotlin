@@ -6,9 +6,9 @@ class Vtb(balance: Double, bank: String) : DebitCard(balance, bank) {
         println("Собственные средства: $balance\n")
     }
 
-    override fun deposit(cash: Double) {
+    override fun deposit(cash: Double): String {
         val amountCash = (cash + (cash * cashback))
-        println("На карту $bank начислены ${(cash * cashback)} бонусов за пополнение. Общая сумма пополнения $amountCash")
         super.deposit(amountCash)
+        return "На карту $bank начислены ${(cash * cashback)} бонусов за пополнение. Общая сумма пополнения $amountCash\n"
     }
 }

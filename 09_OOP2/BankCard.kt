@@ -1,8 +1,10 @@
 abstract class BankCard {
-    abstract protected val balance: Double
-    abstract fun deposit(cash: Double)
-    abstract fun pay(cash: Double) : Boolean
-    abstract fun getBalanceInfo()
-    abstract fun getAvailableFunds()
+    protected abstract val balance: Double
+    var lastTransaction: String = ""
+        get() = println(field).toString()
+    abstract fun deposit(cash: Double): String
+    abstract fun pay(cash: Double): Boolean
+    abstract fun getBalanceInfo(): String
+    abstract fun getAvailableFunds(): String
 
 }
