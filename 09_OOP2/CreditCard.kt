@@ -1,6 +1,6 @@
 open class CreditCard(
     override var balance: Double,
-    private val creditLimit: Double,
+    protected val creditLimit: Double,
     protected val bank: String
 ) :
     BankCard() {
@@ -35,12 +35,10 @@ open class CreditCard(
                 )
     }
 
-    override fun pay(cash: Double): Boolean {
+    override fun pay(cash: Double): Pair<Boolean, String> {
         val toCredit: Double
         if (cash > (creditBalance + balance)) {
-            lastTransaction =
-                "На карте недостаточно средств. Сумма покупки: $cash, доступно средств: ${creditBalance + balance}\n"
-            return false
+            return false to "На карте недостаточно средств. Сумма покупки: $cash, доступно средств: ${creditBalance + balance}\n"
         }
         if (cash > balance) {
             toCredit = cash - balance
@@ -49,15 +47,11 @@ open class CreditCard(
         } else {
             balance -= cash
         }
-        lastTransaction =
-            """Совершена покупка по карте $bank на сумму $cash:
+        return true to """Совершена покупка по карте $bank на сумму $cash:
                 |Кредитный лимит: $creditLimit
                 |Кредитный баланс: $creditBalance
                 |Собственные средства: $balance
-                |
             """.trimMargin()
-        this.lastTransaction
-        return true
     }
 
     override fun getBalanceInfo() : String {

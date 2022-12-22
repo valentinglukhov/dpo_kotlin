@@ -9,12 +9,16 @@ class Sberbank(balance: Double, creditLimit: Double, bank: String) : CreditCard(
         println("Собственные средства: $balance\n")
     }
 
-    override fun pay(cash: Double): Boolean {
-        if (super.pay(cash)) {
+    override fun pay(cash: Double): Pair<Boolean, String> {
+        if (super.pay(cash).first) {
             deposit(cash * cashback)
-            lastTransaction = "На карту $bank дополнительно начислены бонусы за покупку в размере: ${cash * cashback}"
-            return true
+            return true to """Совершена покупка по карте $bank на сумму $cash:
+                |Кредитный лимит: $creditLimit
+                |Кредитный баланс: $creditBalance
+                |Собственные средства: $balance
+                |На карту $bank дополнительно начислены бонусы за покупку в размере: ${cash * cashback}
+            """.trimMargin()
         }
-        return false
+        return false to "На карте недостаточно средств. Сумма покупки: $cash, доступно средств: ${creditBalance + balance}\n"
     }
 }

@@ -8,17 +8,15 @@ open class DebitCard(override var balance: Double, protected val bank: String) :
             """.trimMargin()
     }
 
-    override fun pay(cash: Double): Boolean {
+    override fun pay(cash: Double): Pair<Boolean, String> {
         if (cash > balance) {
-            lastTransaction = "На карте $bank недостаточно средств. Сумма покупки: $cash, доступно средств: $balance\n"
-            return false
+            return false to "На карте $bank недостаточно средств. Сумма покупки: $cash, доступно средств: $balance\n"
         }
         balance -= cash
-        lastTransaction = """Совершена покупка по карте $bank на сумму $cash:
+        return true to """Совершена покупка по карте $bank на сумму $cash:
                 |Собственные средства: $balance
                 |
             """.trimMargin()
-        return true
     }
 
     override fun getBalanceInfo(): String {
