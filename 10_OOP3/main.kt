@@ -9,9 +9,9 @@ fun main() {
         Пожалуйста введите сумму в рублях и символ валюты через пробел, в формате "100 ₿"
     """.trimIndent()
     )
-    val (sum, curency) = getSumAndCurrency(getInput())
-    Converters.get(curency).convertRub(sum)
-}
+        val (sum, curency) = getSumAndCurrency(getInput())
+        Converters.get(curency).convertRub(sum)
+    }
 
 fun getInput(): String {
     var input = readln()

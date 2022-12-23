@@ -1,5 +1,4 @@
 object Converters {
-
     val convertersList: List<CurrencyConverter> = listOf(RubToBitcoin(), RubToUan(), RubToJpy())
     fun get(currencyCode: String) : CurrencyConverter {
         when (currencyCode) {
@@ -11,7 +10,6 @@ object Converters {
                 override val exchangeRate: Double = 0.0
                 override fun convertRub(sum: Double) {
                     println("Код валюты $currencyCode в справочнике не найден.")
-                    get(getSumAndCurrency(getInput()).second)
                 }
             }
         }
