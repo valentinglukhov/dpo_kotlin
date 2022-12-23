@@ -11,7 +11,7 @@ object Converters {
                 override val exchangeRate: Double = 0.0
                 override fun convertRub(sum: Double) {
                     println("Код валюты $currencyCode в справочнике не найден.")
-                    getInput()
+                    get(getSumAndCurrency(getInput()).second)
                 }
             }
         }
