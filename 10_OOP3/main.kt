@@ -9,7 +9,8 @@ fun main() {
         Пожалуйста введите сумму в рублях и символ валюты через пробел, в формате "100 ₿"
     """.trimIndent()
     )
-    Converters.get(getSumAndCurrency(getInput()).second).convertRub(100.0)
+    val (sum, curency) = getSumAndCurrency(getInput())
+    Converters.get(curency).convertRub(sum)
 }
 
 fun getInput(): String {
@@ -26,4 +27,3 @@ fun getSumAndCurrency(inputString: String): Pair<Double, String> {
     val currency: String = inputString.substringAfter(" ")
     return Pair(sum, currency)
 }
-
