@@ -1,3 +1,5 @@
+import kotlin.random.Random
+
 object Weapons {
     fun makePistol () : AbstractWeapon {
         val pistol = object : AbstractWeapon() {
@@ -20,7 +22,7 @@ object Weapons {
     fun makeRifle () : AbstractWeapon {
         val rifle = object : AbstractWeapon() {
             override val stackQuantity: Int = 30
-            override val fireType: FireType = FireType.Burst(10)
+            override val fireType: FireType = FireType.Burst(Random.nextInt(5, 10))
             override val type: String = "Винтовка"
         }
         return rifle

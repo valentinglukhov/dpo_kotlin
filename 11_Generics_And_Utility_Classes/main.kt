@@ -7,7 +7,10 @@ fun main() {
         warriorCount = inputCount()
     }
     println("Сражение с $warriorCount воинами в каждой команде началось.")
-    val warrior = Generalissimo()
+    val warrior1 = Generalissimo()
+    val warrior2 = Generalissimo()
+    println(warrior1.weaponType.fireType)
+    println(warrior2.weaponType.fireType)
     val ammo: Ammo = Ammo.BULLET
     println(ammo)
     println(warriorCount.chance())

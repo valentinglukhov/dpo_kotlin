@@ -5,7 +5,7 @@ abstract class AbstractWeapon {
     private val stack = Stack<Ammo>()
     val stackIsEmpty = stack.isEmpty()
     val stackToShoot = Stack<Ammo>()
-    val burstSize = fireType.burstSize
+    val burstSize by lazy { fireType.burstSize }
 
     fun getAmmo(fireType: FireType, ammo: Ammo) : Stack<Ammo> {
         if (burstSize <= stack.stack.size) {
