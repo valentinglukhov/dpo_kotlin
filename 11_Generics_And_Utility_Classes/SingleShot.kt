@@ -1,0 +1,3 @@
+object SingleShot : FireType() {
+
+}

@@ -1,9 +1,9 @@
-enum class Ammo(val damage: Double, val criticalDamageChance: Int, val criticalDamageRatio: Double) {
-    ARROW(10.0, 30, 1.3),
-    BULLET(20.0, 70, 1.5),
-    SHOTGUNBULLET(30.0, 50, 1.7);
+enum class Ammo(val damage: Int, val criticalDamageChance: Int, val criticalDamageRatio: Int) {
+    ARROW(10, 30, 30),
+    BULLET(20, 70, 50),
+    SHOTGUNBULLET(30, 50, 70);
 
-    fun getDamageCount(): Double {
+    fun getDamageCount(): Int {
         return if (criticalDamageChance.chance())
             damage * criticalDamageRatio
         else
