@@ -2,7 +2,8 @@ object Weapons {
     fun makePistol () : AbstractWeapon {
         val pistol = object : AbstractWeapon() {
             override val stackQuantity: Int = 12
-            override val fireType: FireType = SingleShot
+            override val fireType: FireType = FireType.SingleShot
+            override val type: String = "Пистолет"
         }
         return pistol
     }
@@ -10,7 +11,8 @@ object Weapons {
     fun makeShotgun () : AbstractWeapon {
         val shotgun = object : AbstractWeapon() {
             override val stackQuantity: Int = 5
-            override val fireType: FireType = SingleShot
+            override val fireType: FireType = FireType.SingleShot
+            override val type: String = "Дробовик"
         }
         return shotgun
     }
@@ -18,7 +20,8 @@ object Weapons {
     fun makeRifle () : AbstractWeapon {
         val rifle = object : AbstractWeapon() {
             override val stackQuantity: Int = 30
-            override val fireType: FireType = Burst(5)
+            override val fireType: FireType = FireType.Burst(10)
+            override val type: String = "Винтовка"
         }
         return rifle
     }
@@ -26,7 +29,8 @@ object Weapons {
     fun makeBow () : AbstractWeapon {
         val bow = object : AbstractWeapon() {
             override val stackQuantity: Int = 3
-            override val fireType: FireType = Burst(5)
+            override val fireType: FireType = FireType.SingleShot
+            override val type: String = "Лук"
         }
         return bow
     }

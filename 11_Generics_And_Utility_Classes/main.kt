@@ -7,11 +7,22 @@ fun main() {
         warriorCount = inputCount()
     }
     println("Сражение с $warriorCount воинами в каждой команде началось.")
-
+    val warrior = Generalissimo()
+    val ammo: Ammo = Ammo.BULLET
+    println(ammo)
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(warriorCount.chance())
+    println(ammo)
 }
 
 fun Int.chance() : Boolean {
-    return kotlin.random.Random.nextInt(0, 100) > this
+    return kotlin.random.Random.nextInt(0, 100) < this
 }
 
 fun inputCount(): Int? {

@@ -5,9 +5,8 @@ enum class Ammo(val damage: Int, val criticalDamageChance: Int, val criticalDama
 
     fun getDamageCount(): Int {
         return if (criticalDamageChance.chance())
-            damage * criticalDamageRatio
+            damage * (criticalDamageRatio / 100 + 1)
         else
             damage
     }
-
 }
