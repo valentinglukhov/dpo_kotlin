@@ -3,7 +3,8 @@ abstract class AbstractWarrior : Warrior {
     abstract override val chanceToAvoidHit: Int
     abstract val accuracy: Int
     abstract val weapon: AbstractWeapon
-    abstract override val isKilled: Boolean
+    override val isKilled: Boolean
+        get() = currentHealth <=0
     abstract var currentHealth: Int
 
     override fun Attack(warrior: Warrior) {
@@ -17,9 +18,9 @@ abstract class AbstractWarrior : Warrior {
                 if (accuracy.chance() && !warrior.chanceToAvoidHit.chance()) {
                     damageAmount += i.getDamageCount()
                     warrior.takeDamage(damageAmount)
-                    println("$warrior получил урон $damageAmount")
                 }
             }
+            println("${warrior.javaClass.simpleName} получил урон $damageAmount от ${this.javaClass.simpleName}")
         }
     }
 
