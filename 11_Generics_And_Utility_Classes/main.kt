@@ -1,7 +1,7 @@
 import java.lang.Exception
 
 fun main() {
-    var stack = Stack<Int>()
+//    var stack = Stack<Int>()
     var warriorCount: Int? = null
     while (warriorCount == null) {
         warriorCount = inputCount()
@@ -9,19 +9,25 @@ fun main() {
     println("Сражение с $warriorCount воинами в каждой команде началось.")
     val warrior1 = Generalissimo()
     val warrior2 = Generalissimo()
-    println(warrior1.weaponType.fireType)
-    println(warrior2.weaponType.fireType)
-    val ammo: Ammo = Ammo.BULLET
-    println(ammo)
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(warriorCount.chance())
-    println(ammo)
+
+    warrior2.Attack(warrior1)
+    warrior1.Attack(warrior2)
+    warrior2.Attack(warrior1)
+    warrior1.Attack(warrior2)
+    warrior1.Attack(warrior2)
+    warrior1.Attack(warrior2)
+
+
+
+
+//    println(warrior2.weapon.fireType)
+//    println(warrior2.weapon.reloadStack())
+//    println(warrior2.weapon.stack.stack.size)
+//    println(warrior2.weapon.getAmmo())
+//    println(warrior2.weapon.stackToShoot.stack.size)
+//    println(warrior2.weapon.stack.isEmpty())
+//    println(warrior2.weapon.stack.stack.size)
+
 }
 
 fun Int.chance() : Boolean {

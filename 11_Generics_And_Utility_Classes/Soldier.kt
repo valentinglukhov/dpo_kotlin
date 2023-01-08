@@ -4,7 +4,7 @@ class Soldier : AbstractWarrior() {
     override val maxHealth: Int = Random.nextInt(30, 50)
     override val chanceToAvoidHit: Int = Random.nextInt(30, 50)
     override val accuracy: Int = Random.nextInt(30, 50)
-    override val weaponType: AbstractWeapon = Weapons.makePistol()
+    override val weapon: AbstractWeapon = Weapons.makePistol()
     override val isKilled: Boolean
         get() = currentHealth <= 0
     override var currentHealth: Int = Random.nextInt(29, maxHealth)
@@ -14,7 +14,7 @@ class Soldier : AbstractWarrior() {
             |Максимальный уровень здоровья - $maxHealth ХП
             |Шанс избежать попадания - $chanceToAvoidHit%
             |Точность - $accuracy%
-            |Оружие - ${weaponType.type}
+            |Оружие - ${weapon.type}
             |Текущий уровень здоровья - $currentHealth ХП
         """.trimMargin())
     }

@@ -2,19 +2,20 @@ abstract class AbstractWeapon {
     abstract val stackQuantity: Int
     abstract val fireType: FireType
     abstract val type: String
-    private val stack = Stack<Ammo>()
-    val stackIsEmpty = stack.isEmpty()
+    val stack = Stack<Ammo>()
+    val stackIsEmpty
+        get() = stack.isEmpty()
     val stackToShoot = Stack<Ammo>()
     val burstSize by lazy { fireType.burstSize }
 
-    fun getAmmo(fireType: FireType, ammo: Ammo) : Stack<Ammo> {
+    fun getAmmo() : Stack<Ammo> {
         if (burstSize <= stack.stack.size) {
-            for (ammo in 1..burstSize) {
+            for (i in 1..burstSize) {
                 val ammo = stack.pop()
                 if (ammo != null) stackToShoot.push(ammo)
             }
         } else {
-                for (ammo in 1..stack.stack.size) {
+                for (i in 1..stack.stack.size) {
                     val ammo = stack.pop()
                     if (ammo != null) stackToShoot.push(ammo)
                 }
@@ -22,12 +23,12 @@ abstract class AbstractWeapon {
         return stackToShoot
     }
 
-    fun reloadStack(ammo: Ammo): Stack<Ammo> {
+    fun reloadStack(): Stack<Ammo> {
         while (stackQuantity > stack.stack.size) {
             val ammo = makeAmmo()
             if (ammo != null) stack.push(ammo)
-            println(stack)
         }
+        println("Оружие перезаряжено.")
         return stack
     }
 
