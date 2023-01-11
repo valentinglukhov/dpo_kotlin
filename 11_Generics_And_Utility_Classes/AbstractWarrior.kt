@@ -8,7 +8,7 @@ abstract class AbstractWarrior : Warrior {
     abstract var currentHealth: Int
 
     override fun attack(warrior: Warrior) {
-        var damageAmount: Int = 0
+        var damageAmount = 0
         if (weapon.stackIsEmpty) {
             weapon.reloadStack()
             println("Ход пропущен.")
