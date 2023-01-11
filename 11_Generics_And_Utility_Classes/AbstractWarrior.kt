@@ -7,7 +7,7 @@ abstract class AbstractWarrior : Warrior {
         get() = currentHealth <=0
     abstract var currentHealth: Int
 
-    override fun Attack(warrior: Warrior) {
+    override fun attack(warrior: Warrior) {
         var damageAmount: Int = 0
         if (weapon.stackIsEmpty) {
             weapon.reloadStack()
@@ -21,6 +21,7 @@ abstract class AbstractWarrior : Warrior {
                 }
             }
             println("${warrior.javaClass.simpleName} получил урон $damageAmount от ${this.javaClass.simpleName}")
+            if (warrior.isKilled) println("Боец вырублен.")
         }
     }
 

@@ -1,17 +1,11 @@
 sealed class BattleState(val team1: MutableList<AbstractWarrior>, val team2: MutableList<AbstractWarrior>) {
 
-    class Team1Win
-
     class Progress(team1: MutableList<AbstractWarrior>, team2: MutableList<AbstractWarrior>) :
         BattleState(team1, team2) {
-        var team1wins: Boolean = false
-            get() = team2.isEmpty()
-        var team2wins: Boolean = false
-            get() = team1.isEmpty()
-        var draw: Boolean = false
-            get() = team1.isEmpty() && team2.isEmpty()
+        var battleIsOver: Boolean = false
+            get() = (team1.isEmpty() && team2.isEmpty()) || team2.isEmpty() || team1.isEmpty()
 
-        fun getProgress() {
+        fun getProgress(): Int {
             var healthAmount = 0
             var teamCount = 1
             var playersAlive = 0
@@ -29,7 +23,14 @@ sealed class BattleState(val team1: MutableList<AbstractWarrior>, val team2: Mut
                     playersAlive++
                 healthAmount += team2[i].currentHealth
             }
-            println("Живых игроков в команде №$teamCount - $playersAlive, общее ХП команды - $healthAmount")
+            println("Живых игроков в команде №$teamCount - $playersAlive, общее ХП команды - $healthAmount\n")
+            if (team1.isEmpty() && team2.isEmpty()) {
+                println("Зафиксирована ничья.")
+            } else {
+                if (team2.isEmpty()) println("Зафиксирована победа команды №1.")
+                if (team1.isEmpty()) println("Зафиксирована победа команды №2.")
+            }
+            return if (battleIsOver) 1 else 0
         }
     }
 }

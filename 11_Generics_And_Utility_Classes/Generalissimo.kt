@@ -16,6 +16,7 @@ class Generalissimo : AbstractWarrior() {
             |Точность - $accuracy%
             |Оружие - ${weapon.type}
             |Текущий уровень здоровья - $currentHealth ХП
+            |
         """.trimMargin())
     }
 }

@@ -1,25 +1,18 @@
 import java.lang.Exception
 
 fun main() {
-//    var stack = Stack<Int>()
     var warriorCount: Int? = null
     while (warriorCount == null) {
         warriorCount = inputCount()
     }
     println("Сражение с $warriorCount воинами в каждой команде началось.")
-    val warrior1 = Generalissimo()
-    val warrior2 = Generalissimo()
     var team1 = Team().generateTeam(warriorCount)
     var team2 = Team().generateTeam(warriorCount)
-    BattleState.Progress(team1, team2).getProgress()
-    println(BattleState.Progress(team1, team2).team1wins)
-    println(BattleState.Progress(team1, team2).team2wins)
-    println(BattleState.Progress(team1, team2).draw)
-
-    warrior2.Attack(warrior1)
-    warrior1.Attack(warrior2)
-    warrior2.Attack(warrior1)
-    warrior1.Attack(warrior2)
+    val battle = Battle(team1, team2)
+    while (!BattleState.Progress(team1, team2).battleIsOver) {
+        battle.battleIteration(team1, team2)
+        BattleState.Progress(team1, team2).getProgress()
+    }
 }
 
 fun Int.chance(): Boolean {
