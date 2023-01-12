@@ -32,13 +32,5 @@ abstract class AbstractWeapon {
         return stack
     }
 
-    fun makeAmmo(): Ammo? {
-        return when (type) {
-            "Пистолет" -> return Ammo.BULLET
-            "Дробовик" -> return Ammo.SHOTGUNBULLET
-            "Винтовка" -> return Ammo.BULLET
-            "Лук" -> return Ammo.ARROW
-            else -> {return null}
-        }
-    }
+    abstract fun makeAmmo(): Ammo?
 }
