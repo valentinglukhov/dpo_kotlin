@@ -8,7 +8,7 @@ fun main() {
         print("При накачке ${wheel.currentPressure} атмосфер процедура удалась.")
         val checkPressure = runCatching { wheel.checkPressure() }
         if (checkPressure.isSuccess) {
-            println("Эксплуатация возможна.")
+            println("Эксплуатация возможна =)")
         } else {
             when (checkPressure.exceptionOrNull()) {
                 is IncorrectPressure -> println("При накачке ${wheel.incorrectPressure} атмосфер процедура не удалась.")
