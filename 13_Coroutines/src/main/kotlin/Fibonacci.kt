@@ -7,7 +7,7 @@ object Fibonacci {
             val fN = fN1 + fN2
             fN2 = fN1
             fN1 = fN
-            if (f == n - 3) println("Число Фибоначчи для порядкового номера $n: $fN")
+            if (f == n - 3) println("\nЧисло Фибоначчи для порядкового номера $n: $fN")
         }
     }
 }
