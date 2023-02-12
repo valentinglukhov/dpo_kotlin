@@ -1,14 +1,27 @@
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 fun main() {
     runBlocking {
         launch {
-            println("11211111711111111")
-            delay(2000)
-            println("1232d21ss1111116721222")
+            for (i in 1..500) {
+                delay(10)
+                if (i % 200 == 0) println(".") else print(".")
+            }
         }
-    }
 
+        launch {
+            delay(1000)
+            Fibonacci.take(10000)
+        }
+        launch {
+            delay(1500)
+            Fibonacci.take(15000)
+        }
+        withTimeout(3000) {
+            delay(3000)
+            launch { Fibonacci.take(50000) }
+        }
+
+    }
 }
+
