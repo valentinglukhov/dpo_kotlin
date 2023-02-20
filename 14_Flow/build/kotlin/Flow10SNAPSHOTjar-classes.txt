@@ -1,1 +1,1 @@
-C:\Users\glukh\Desktop\Projects\dpo_kotlin\14_Flow\build\classes\kotlin\main\MainKt.class
+C:\Users\glukh\Desktop\Projects\dpo_kotlin\14_Flow\build\classes\kotlin\main\LotteryOrganizer.class;C:\Users\glukh\Desktop\Projects\dpo_kotlin\14_Flow\build\classes\kotlin\main\LotteryPlayer.class;C:\Users\glukh\Desktop\Projects\dpo_kotlin\14_Flow\build\classes\kotlin\main\MainKt.class
