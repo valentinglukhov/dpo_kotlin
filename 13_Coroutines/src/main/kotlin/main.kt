@@ -2,7 +2,7 @@ import kotlinx.coroutines.*
 
 suspend fun main() {
     val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        println("")
+        println("Отмена")
     }
     val scopeJob = Job()
     val scope = CoroutineScope(exceptionHandler + scopeJob)
