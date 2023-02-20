@@ -3,7 +3,7 @@ import kotlin.random.nextInt
 
 class LotteryPlayer (name: String) {
     val name: String = name
-    var lotteryTicket = mutableListOf<MutableList<Int>>()
+    var lotteryTicket = LotteryTicket().lotteryTicket
     var firstRow = mutableListOf<Int>()
 
     init {
