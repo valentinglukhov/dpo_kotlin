@@ -4,7 +4,8 @@ import kotlin.random.nextInt
 class LotteryPlayer (name: String) {
     val name: String = name
     var lotteryTicket = LotteryTicket().lotteryTicket
-    var firstRow = mutableListOf<Int>()
+    private var firstRow = mutableListOf<Int>()
+    val sequence = (1..90).shuffled()
 
     init {
         while (firstRow.size < 10) {
