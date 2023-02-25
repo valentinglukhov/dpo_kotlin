@@ -19,9 +19,5 @@ fun main() {
                 if (player1.lotteryTicket.emptyRows == 3 || player2.lotteryTicket.emptyRows == 3) scope.cancel()
             }
         }.join()
-
-
     }
-
-
 }
