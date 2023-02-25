@@ -1,4 +1,3 @@
-import java.math.BigDecimal
 import java.math.RoundingMode
 
 class LotteryTicket {
@@ -9,7 +8,8 @@ class LotteryTicket {
     var thirdRow = mutableMapOf<Int, Int>()
     var newSequence = mutableListOf<Int>()
     var intermediateSequence = mutableListOf<Int>()
-
+    var lotterySequence = mutableListOf<Int>()
+    var emptyRows: Int = 0
 
     init {
         while (firstRow.size < 5) {
@@ -25,6 +25,7 @@ class LotteryTicket {
                     intermediateSequence.add(it)
                 } else {
                     firstRow.put(key, it)
+                    lotterySequence.add(it)
                 }
             }).toMutableList()
             newSequence += intermediateSequence
@@ -38,6 +39,7 @@ class LotteryTicket {
                     intermediateSequence.add(it)
                 } else {
                     secondRow.put(key, it)
+                    lotterySequence.add(it)
                 }
             }).toMutableList()
             newSequence += intermediateSequence
@@ -51,6 +53,7 @@ class LotteryTicket {
                     intermediateSequence.add(it)
                 } else {
                     thirdRow.put(key, it)
+                    lotterySequence.add(it)
                 }
             }).toMutableList()
             newSequence += intermediateSequence
@@ -61,5 +64,4 @@ class LotteryTicket {
         lotteryTicket.add(thirdRow)
 
     }
-
 }
