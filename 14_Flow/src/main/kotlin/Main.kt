@@ -1,7 +1,7 @@
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
 
 fun main() {
+
     val player3 = LotteryPlayer("Есения", LotteryTicket())
     val player1 = LotteryPlayer("Ангелина", LotteryTicket())
     val player2 = LotteryPlayer("Валентин", LotteryTicket())
