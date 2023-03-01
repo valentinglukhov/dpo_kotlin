@@ -3,7 +3,7 @@ import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.*
 
 class LotteryOrganizer(vararg player: LotteryPlayer) {
-    var players = mutableListOf<LotteryPlayer>()
+    val players = player
     private var lotteryBag = (1..90).shuffled().toList()
     val scope = CoroutineScope(Job() + Dispatchers.Default)
     private val _sharedFlow = MutableSharedFlow<Int>(replay = 10, onBufferOverflow = BufferOverflow.SUSPEND)
@@ -14,8 +14,6 @@ class LotteryOrganizer(vararg player: LotteryPlayer) {
         println("Участники лотереи:")
         for (plr in player) {
             plr.printLotteryTicket()
-            players.add(plr)
-            println(players)
         }
         if (player.size >= 2) startGame()
     }
